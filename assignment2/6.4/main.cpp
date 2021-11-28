@@ -1,0 +1,1 @@
+// Array would have been cleared from the stack, meaning the pointer returned is invalid
