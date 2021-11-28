@@ -73,6 +73,7 @@ const Point *PointArray::get(const int position) const {
 }
 
 
+
 int main () {
     Point arr[] = {Point(0, 0), Point(1, 2)};
 
