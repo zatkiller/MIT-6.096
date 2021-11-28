@@ -24,7 +24,7 @@ public:
     void push_back(const Point &p);
     void insert(const int position, const Point &p);
     void remove(const int pos);
-    const int getSize() const;
+    const int getSize() const { return this->size; }
     void clear();
 
     Point *get(const int position);
@@ -41,8 +41,10 @@ protected:
     static int numPolygons;
     PointArray points;
 
+public:
     Polygon(const PointArray &pa);
     Polygon(const Point points[], const int numPoints);  
+     Polygon () { numPolygons--; }
 
     virtual double area() const = 0;
     static int getNumPolygons() { return numPolygons; }
