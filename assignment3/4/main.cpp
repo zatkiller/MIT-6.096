@@ -40,6 +40,39 @@ void PointArray::resize(int n) {
     this->points = tmp;
 }
 
+void PointArray::push_back(const Point &p) {
+    resize(this->size+1);
+    points[this->size - 1] = p;
+}
+
+void PointArray::insert(const int position, const Point &p) {
+    resize(this->size+1);
+    for (int i = this->size; i > position; i--) {
+        this->points[i] = points[i-1];
+    }
+    this->points[position] = p;
+}
+
+void PointArray::remove(const int pos) {
+    for (int i = pos; i < this->size - 2; i++) {
+        this->points[i] = this->points[i+1];
+    }
+    resize(this->size - 1);
+}
+
+void PointArray::clear() {
+    resize(0);
+}
+
+Point *PointArray::get(const int position) {
+    return (position >= this->size) ? NULL : this->points + position;
+}
+
+const Point *PointArray::get(const int position) const {
+    return (position >= this->size) ? NULL : this->points + position;
+}
+
+
 int main () {
     Point arr[] = {Point(0, 0), Point(1, 2)};
 
