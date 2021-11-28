@@ -9,8 +9,12 @@ class PointArray {
     Point * points;
     int size;
 
+    void resize(int n);
+
+public:
     PointArray();
     PointArray(const Point points[], const int size);
     PointArray(const PointArray &pa);
+    ~PointArray();
 
 };
